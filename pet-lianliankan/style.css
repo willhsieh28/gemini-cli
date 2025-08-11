@@ -7,15 +7,15 @@ body {
 
 #game-board {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-gap: 10px;
+  grid-template-columns: repeat(15, 40px);
+  grid-gap: 5px; /* Reduced gap for smaller tiles */
   border: 2px solid #333;
   padding: 10px;
 }
 
 .tile {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   background-color: #ccc;
   border: 1px solid #999;
   display: flex;
@@ -23,15 +23,6 @@ body {
   align-items: center;
   cursor: pointer;
 }
-
-.pet-1 { background-color: #ffadad; }
-.pet-2 { background-color: #ffd6a5; }
-.pet-3 { background-color: #fdffb6; }
-.pet-4 { background-color: #caffbf; }
-.pet-5 { background-color: #9bf6ff; }
-.pet-6 { background-color: #a0c4ff; }
-.pet-7 { background-color: #bdb2ff; }
-.pet-8 { background-color: #ffc6ff; }
 
 .tile.selected {
   border: 2px solid #0000ff;
