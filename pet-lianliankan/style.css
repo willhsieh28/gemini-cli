@@ -29,5 +29,7 @@ body {
 }
 
 .tile.matched {
-  visibility: hidden;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  cursor: default;
 }
