@@ -7,29 +7,43 @@ body {
 
 #game-board {
   display: grid;
-  grid-template-columns: repeat(15, 40px);
-  grid-gap: 5px; /* Reduced gap for smaller tiles */
+  /* 11 columns for 33 pairs (66 tiles) */
+  grid-template-columns: repeat(11, 50px);
+  grid-gap: 8px;
   border: 2px solid #333;
   padding: 10px;
+  background-color: #dcdcdc; /* Light gray background for the board */
 }
 
 .tile {
-  width: 40px;
-  height: 40px;
-  background-color: #ccc;
+  width: 50px;
+  height: 50px;
+  background-color: #f0f8ff; /* AliceBlue, a nice light color */
   border: 1px solid #999;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-size: 36px; /* Make emojis large */
+  user-select: none; /* Prevent selecting the emoji text */
+  transition: background-color 0.2s; /* Smooth transition for selection */
+}
+
+.tile:hover {
+  background-color: #d0e8ff; /* Light blue on hover */
 }
 
 .tile.selected {
-  border: 2px solid #0000ff;
+  background-color: #add8e6; /* LightBlue for selected */
+  border: 2px solid #0000ff; /* Keep a border for emphasis */
 }
 
 .tile.matched {
-  background-color: transparent !important;
-  border-color: transparent !important;
-  cursor: default;
+  /* Aggressive CSS to ensure tile disappears visually and functionally */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0); /* Shrink the tile to nothing */
+  transition: all 0.2s; /* Animate the disappearance */
 }
